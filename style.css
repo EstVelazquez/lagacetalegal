@@ -30,24 +30,27 @@ header h1 {
 
 /* Secciones tipo burbuja */
 .secciones {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .secciones a {
-  display: inline-block;
-  margin: 0.3rem;
-  padding: 0.5rem 1rem;
-  background: #f4c542;
-  color: #0c2a4c;
+  background: #005f73; /* 💡 Cambiá este color a gusto */
+  color: white;
+  padding: 0.4rem 0.9rem;
   border-radius: 999px;
-  font-size: 0.9rem;
   text-decoration: none;
+  font-size: 0.85rem;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .secciones a:hover {
-  background: #e0b435;
+  background: #0a9396; /* 💡 Color más claro al pasar el mouse */
+  transform: scale(1.05);
 }
 
 /* Redes sociales */
