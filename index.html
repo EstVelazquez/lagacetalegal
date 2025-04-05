@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Gaceta Legal - Noticias</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
@@ -10,13 +10,12 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-..."
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
 </head>
 <body>
-  <!-- Pantalla de bienvenida -->
+  <!-- Pantalla de bienvenida con transición -->
   <section id="intro" class="pantalla-inicial">
     <h1>La Gaceta Legal</h1>
     <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
@@ -26,12 +25,12 @@
   <header class="oculto">
     <h1>La Gaceta Legal</h1>
     <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
-    <div class="secciones">
-      <a href="#fallo">Fallo</a>
-      <a href="#reforma">Reforma</a>
+    <nav class="secciones">
+      <a href="#fallo">Fallos</a>
+      <a href="#reforma">Reformas</a>
       <a href="#jurisprudencia">Jurisprudencia</a>
       <a href="#opinion">Opinión</a>
-    </div>
+    </nav>
   </header>
 
   <!-- Separador ondulado -->
@@ -43,23 +42,22 @@
 
   <!-- Contenido principal -->
   <main class="oculto fade-in">
-    <article id="fallo">
+    <article class="fade-in" id="fallo">
       <span class="label">Fallo</span>
       <h2>📌 Noticia destacada de la semana</h2>
       <p><strong>Fecha:</strong> 5 de abril de 2025</p>
       <p>El Senado rechazó los pliegos de los magistrados propuestos para las vacantes de la Corte Suprema.</p>
     </article>
 
-    <article id="reforma">
+    <article class="fade-in" id="reforma">
       <span class="label">Reforma</span>
       <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
       <p><strong>Fecha:</strong> 3 de abril de 2025</p>
-      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. 
-      Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
+      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
     </article>
   </main>
 
-  <!-- Pie de página -->
+  <!-- Footer -->
   <footer class="oculto">
     <p>© 2025 La Gaceta Legal</p>
     <div class="social-icons">
@@ -70,4 +68,13 @@
   </footer>
 
   <script>
-    // Esperar
+    // Simulación de entrada
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("intro").classList.add("fade-out");
+        document.querySelectorAll(".oculto").forEach(el => el.classList.remove("oculto"));
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
