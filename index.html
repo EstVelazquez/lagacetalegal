@@ -14,6 +14,27 @@
     referrerpolicy="no-referrer"
   />
 </head>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const botones = document.querySelectorAll('.burbuja');
+    const articulos = document.querySelectorAll('article');
+
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const seccion = boton.dataset.seccion;
+
+        articulos.forEach(articulo => {
+          if (articulo.id === seccion) {
+            articulo.style.display = 'block';
+          } else {
+            articulo.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
 <body>
   <!-- Pantalla de bienvenida con transición -->
   <section id="intro" class="pantalla-inicial">
