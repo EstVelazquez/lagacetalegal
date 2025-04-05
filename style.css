@@ -124,3 +124,18 @@ footer {
   color: #333;
   margin-top: 2rem;
 }
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffd700; /* dorado suave al pasar el mouse */
+}
