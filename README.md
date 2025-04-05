@@ -1,2 +1,2 @@
-# lagacetalegal
+# la gaceta legal
 Noticias jurídicas.
