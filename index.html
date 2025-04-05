@@ -7,33 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const botones = document.querySelectorAll('.burbuja');
-    const articulos = document.querySelectorAll('article');
-
-    botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-        const seccion = boton.dataset.seccion;
-
-        articulos.forEach(articulo => {
-          if (articulo.id === seccion) {
-            articulo.style.display = 'block';
-          } else {
-            articulo.style.display = 'none';
-          }
-        });
-      });
-    });
-  });
-</script>
 
 <body>
   <!-- Pantalla de bienvenida con transición -->
@@ -54,6 +29,15 @@
     </nav>
   </header>
 
+  <!-- Filtros (burbujas) -->
+  <section class="filtros oculto">
+    <span class="burbuja" data-seccion="todas">Todas</span>
+    <span class="burbuja" data-seccion="fallo">Fallos</span>
+    <span class="burbuja" data-seccion="reforma">Reformas</span>
+    <span class="burbuja" data-seccion="jurisprudencia">Jurisprudencia</span>
+    <span class="burbuja" data-seccion="opinion">Opinión</span>
+  </section>
+
   <!-- Separador ondulado -->
   <div class="wave-separator oculto">
     <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -63,40 +47,32 @@
 
   <!-- Contenido principal -->
   <main class="oculto fade-in">
-    <article class="fade-in" id="fallo">
+    <article class="fade-in fallo">
       <span class="label">Fallo</span>
       <h2>📌 Noticia destacada de la semana</h2>
       <p><strong>Fecha:</strong> 5 de abril de 2025</p>
       <p>El Senado rechazó los pliegos de los magistrados propuestos para las vacantes de la Corte Suprema.</p>
     </article>
 
- <article class="fade-in" id="reforma">
+    <article class="fade-in reforma">
       <span class="label">Reforma</span>
       <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
       <p><strong>Fecha:</strong> 3 de abril de 2025</p>
-      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
+      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil...</p>
     </article>
 
-     <article class="fade-in" id="reforma">
+    <article class="fade-in reforma">
       <span class="label">Reforma</span>
-      <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
-      <p><strong>Fecha:</strong> 3 de abril de 2025</p>
-      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
+      <h2>📜 Cambios en contratos electrónicos</h2>
+      <p><strong>Fecha:</strong> 2 de abril de 2025</p>
+      <p>El nuevo proyecto legislativo busca regular los contratos electrónicos en plataformas digitales.</p>
     </article>
 
-
-     <article class="fade-in" id="reforma">
-      <span class="label">Reforma</span>
-      <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
-      <p><strong>Fecha:</strong> 3 de abril de 2025</p>
-      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
-    </article>
-    
-    <article class="fade-in" id="reforma">
-      <span class="label">Reforma</span>
-      <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
-      <p><strong>Fecha:</strong> 3 de abril de 2025</p>
-      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
+    <article class="fade-in opinion">
+      <span class="label">Opinión</span>
+      <h2>💬 ¿Reformar o no reformar?</h2>
+      <p><strong>Fecha:</strong> 1 de abril de 2025</p>
+      <p>Una columna de opinión sobre la necesidad (o no) de reformar el sistema judicial argentino.</p>
     </article>
   </main>
 
@@ -110,13 +86,34 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Simulación de entrada
+    // Transición de entrada
     window.addEventListener("load", () => {
       setTimeout(() => {
         document.getElementById("intro").classList.add("fade-out");
         document.querySelectorAll(".oculto").forEach(el => el.classList.remove("oculto"));
       }, 2000);
+    });
+
+    // Filtro por sección
+    document.addEventListener('DOMContentLoaded', function () {
+      const botones = document.querySelectorAll('.burbuja');
+      const articulos = document.querySelectorAll('main article');
+
+      botones.forEach(boton => {
+        boton.addEventListener('click', () => {
+          const seccion = boton.dataset.seccion;
+
+          if (seccion === 'todas') {
+            articulos.forEach(a => a.style.display = 'block');
+          } else {
+            articulos.forEach(a => {
+              a.style.display = a.classList.contains(seccion) ? 'block' : 'none';
+            });
+          }
+        });
+      });
     });
   </script>
 </body>
