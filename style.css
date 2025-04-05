@@ -5,7 +5,6 @@ body {
   padding: 0;
   background: #f4f4f4;
   color: #333;
-  animation: fadeIn 0.6s ease-in;
 }
 
 /* Encabezado */
@@ -21,7 +20,7 @@ header h1 {
   margin: 0;
 }
 
-/* Subtítulo */
+/* Subtítulo en cursiva */
 .subtitulo {
   font-family: 'Open Sans', sans-serif;
   font-style: italic;
@@ -30,25 +29,17 @@ header h1 {
   color: #ccc;
 }
 
-/* Secciones estilo burbujas */
+/* Secciones estilo burbuja */
 .secciones {
-  margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin: 1.5rem 0;
 }
 
 .secciones a {
   background: #0c2a4c;
   color: #fff;
   text-decoration: none;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px; /* Esto es clave: redondea el borde */
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-family: 'Open Sans', sans-serif;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+  padding: 0.4rem 0.
