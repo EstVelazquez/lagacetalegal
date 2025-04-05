@@ -22,21 +22,13 @@
     <h1>La Gaceta Legal</h1>
     <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
     <nav class="secciones">
-      <a href="#fallo">Fallos</a>
-      <a href="#reforma">Reformas</a>
-      <a href="#jurisprudencia">Jurisprudencia</a>
-      <a href="#opinion">Opinión</a>
+      <a href="#" class="burbuja" data-seccion="fallo">Fallos</a>
+      <a href="#" class="burbuja" data-seccion="reforma">Reformas</a>
+      <a href="#" class="burbuja" data-seccion="jurisprudencia">Jurisprudencia</a>
+      <a href="#" class="burbuja" data-seccion="opinion">Opinión</a>
+      <a href="#" class="burbuja" data-seccion="todas">Todas</a>
     </nav>
   </header>
-
-  <!-- Filtros (burbujas) -->
-  <section class="filtros oculto">
-    <span class="burbuja" data-seccion="todas">Todas</span>
-    <span class="burbuja" data-seccion="fallo">Fallos</span>
-    <span class="burbuja" data-seccion="reforma">Reformas</span>
-    <span class="burbuja" data-seccion="jurisprudencia">Jurisprudencia</span>
-    <span class="burbuja" data-seccion="opinion">Opinión</span>
-  </section>
 
   <!-- Separador ondulado -->
   <div class="wave-separator oculto">
@@ -58,21 +50,21 @@
       <span class="label">Reforma</span>
       <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
       <p><strong>Fecha:</strong> 3 de abril de 2025</p>
-      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil...</p>
+      <p>El Ministerio de Justicia presentó un anteproyecto para modificar puntos clave del Código Civil. Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.</p>
     </article>
 
     <article class="fade-in reforma">
       <span class="label">Reforma</span>
-      <h2>📜 Cambios en contratos electrónicos</h2>
+      <h2>🗞️ Cambios en el régimen de adopción</h2>
       <p><strong>Fecha:</strong> 2 de abril de 2025</p>
-      <p>El nuevo proyecto legislativo busca regular los contratos electrónicos en plataformas digitales.</p>
+      <p>Se propone una simplificación de los trámites judiciales para garantizar el interés superior del niño.</p>
     </article>
 
-    <article class="fade-in opinion">
-      <span class="label">Opinión</span>
-      <h2>💬 ¿Reformar o no reformar?</h2>
+    <article class="fade-in jurisprudencia">
+      <span class="label">Jurisprudencia</span>
+      <h2>📚 Nuevo fallo sobre derechos del consumidor</h2>
       <p><strong>Fecha:</strong> 1 de abril de 2025</p>
-      <p>Una columna de opinión sobre la necesidad (o no) de reformar el sistema judicial argentino.</p>
+      <p>La Corte Suprema resolvió a favor de un consumidor en un caso de cláusulas abusivas en contratos bancarios.</p>
     </article>
   </main>
 
@@ -86,9 +78,8 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- JS para animaciones y filtrado -->
   <script>
-    // Transición de entrada
     window.addEventListener("load", () => {
       setTimeout(() => {
         document.getElementById("intro").classList.add("fade-out");
@@ -96,22 +87,22 @@
       }, 2000);
     });
 
-    // Filtro por sección
     document.addEventListener('DOMContentLoaded', function () {
       const botones = document.querySelectorAll('.burbuja');
       const articulos = document.querySelectorAll('main article');
 
       botones.forEach(boton => {
-        boton.addEventListener('click', () => {
+        boton.addEventListener('click', (e) => {
+          e.preventDefault();
           const seccion = boton.dataset.seccion;
 
-          if (seccion === 'todas') {
-            articulos.forEach(a => a.style.display = 'block');
-          } else {
-            articulos.forEach(a => {
-              a.style.display = a.classList.contains(seccion) ? 'block' : 'none';
-            });
-          }
+          articulos.forEach(articulo => {
+            if (seccion === 'todas' || articulo.classList.contains(seccion)) {
+              articulo.style.display = 'block';
+            } else {
+              articulo.style.display = 'none';
+            }
+          });
         });
       });
     });
