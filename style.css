@@ -231,3 +231,48 @@ footer {
     transform: translateY(0);
   }
 }
+/* Pantalla inicial de presentación */
+.pantalla-inicial {
+  background: #0c2a4c;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lora', serif;
+  text-align: center;
+  transition: opacity 1s ease;
+  z-index: 999;
+}
+
+.pantalla-inicial h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.pantalla-inicial .subtitulo {
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Ocultar elementos al principio */
+.oculto {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* Mostrar gradualmente */
+.visible {
+  opacity: 1;
+}
+
+/* Fade-in para main */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
