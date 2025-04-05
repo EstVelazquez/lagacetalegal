@@ -1,4 +1,4 @@
-/* Tipografías */
+/* Tipografías y colores base */
 body {
   font-family: 'Lora', serif;
   margin: 0;
@@ -20,31 +20,37 @@ header h1 {
   margin: 0;
 }
 
-/* Subtítulo en cursiva */
 .subtitulo {
   font-family: 'Open Sans', sans-serif;
-  font-style: italic;
   font-size: 1.2rem;
+  font-style: italic;
   margin-top: 0.5rem;
   color: #ccc;
 }
 
-/* Secciones estilo burbuja */
+/* Secciones tipo burbuja */
 .secciones {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 1.5rem 0;
+  margin-top: 1rem;
 }
 
 .secciones a {
-  background: #0c2a4c;
-  color: #fff;
+  display: inline-block;
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: #f4c542;
+  color: #0c2a4c;
+  border-radius: 999px;
+  font-size: 0.9rem;
   text-decoration: none;
-  padding: 0.4rem 0.
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
 
-  /* Redes sociales */
+.secciones a:hover {
+  background: #e0b435;
+}
+
+/* Redes sociales */
 .redes-sociales {
   margin-top: 1rem;
 }
@@ -60,3 +66,61 @@ header h1 {
   color: #f4c542;
 }
 
+/* Cuerpo principal */
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Artículos */
+article {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+article:hover {
+  transform: scale(1.01);
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+/* Etiquetas de sección */
+.label {
+  background: #0c2a4c;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  animation: bounce 0.3s ease-in-out;
+}
+
+/* Animación rebote */
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9em;
+  background: #ddd;
+  color: #333;
+  margin-top: 2rem;
+}
