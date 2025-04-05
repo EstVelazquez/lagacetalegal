@@ -1,184 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-
+/* Tipografías */
 body {
   font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
-  background: #fdfcfb;
-  color: #2e2e2e;
-  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
 }
 
+/* Encabezado */
 header {
-  background: #1c1c3c;
+  background: #0c2a4c;
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 header h1 {
   font-size: 2.5rem;
   margin: 0;
-  letter-spacing: 1px;
-  font-family: 'Lora', serif;
 }
 
-header p {
+/* Subtítulo con fuente sobria */
+.subtitulo {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #dcdcdc;
-  font-family: 'Roboto', sans-serif;
+  color: #ccc;
 }
 
+/* Cuerpo principal */
 main {
-  padding: 2rem 1.5rem;
+  padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
+/* Artículos */
 article {
-  background: #ffffff;
+  background: white;
   padding: 1.5rem;
   margin-bottom: 2rem;
-  border-left: 5px solid #4a64d1;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s;
 }
 
 article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: scale(1.01);
 }
 
-article h2 {
-  color: #1c1c3c;
-  margin-top: 0;
-}
-
-article p {
-  margin: 0.5rem 0;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9em;
-  background: #eeeeee;
-  color: #666;
-  border-top: 1px solid #ccc;
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 0.5rem;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
-
-:root {
-  --primary: #4b74ff;
-  --background: #f7f7f7;
-  --text: #333;
-  --header-bg: #0c2a4c;
-  --footer-bg: #e0e0e0;
-  --article-bg: #ffffff;
-  --label-bg: #eef2ff;
-  --label-color: #4b74ff;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-header {
-  background: var(--header-bg);
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-header h1 {
-  font-family: 'Lora', serif;
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-header p {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  font-size: 1.1rem;
-  margin-top: 0.5rem;
-}
-
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem 1rem;
-}
-
-article {
-  background: var(--article-bg);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-left: 5px solid var(--primary);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-
-article:hover {
-  transform: translateY(-4px);
-}
-
-article h2 {
-  margin-top: 0;
-  font-family: 'Lora', serif;
-  color: var(--primary);
-}
-
-article p {
-  margin: 0.5rem 0;
-}
-
+/* Etiquetas de sección */
 .label {
-  display: inline-block;
-  background: var(--label-bg);
-  color: var(--label-color);
+  background: #0c2a4c;
+  color: white;
   font-size: 0.75rem;
-  font-weight: 600;
   text-transform: uppercase;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  animation: bounce 0.3s ease-in-out;
 }
 
+/* Animación de rebote */
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Pie de página */
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   font-size: 0.9em;
-  background: var(--footer-bg);
-  color: #555;
+  background: #ddd;
+  color: #333;
+  margin-top: 2rem;
 }
