@@ -5,54 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Gaceta Legal</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-... (acortado para vista) ..."
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-  <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  });
-
-  document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-  });
-</script>
-
 <body>
   <header>
     <h1>La Gaceta Legal</h1>
-   <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
-    <div class="secciones">
-      <button class="burbuja" data-seccion="todas">Todas</button>
-      <button class="burbuja" data-seccion="fallo">Fallo</button>
-      <button class="burbuja" data-seccion="reforma">Reforma</button>
-      <button class="burbuja" data-seccion="jurisprudencia">Jurisprudencia</button>
-      <button class="burbuja" data-seccion="congreso">Congreso</button>
-      <button class="burbuja" data-seccion="doctrina">Doctrina</button>
-    </div>
+    <p class="subtitulo"><em>Noticias jurídicas, sin vueltas</em></p>
+    <nav class="secciones">
+      <a href="#fallo">Fallo</a>
+      <a href="#reforma">Reforma</a>
+      <a href="#jurisprudencia">Jurisprudencia</a>
+      <a href="#actualidad">Actualidad</a>
+    </nav>
   </header>
 
   <main>
-     <article class="fade-in" data-seccion="fallo">
-    <span class="label">Fallo</span>
-    <h2>📌 Noticia destacada de la semana</h2>
-    <p><strong>Fecha:</strong> 5 de abril de 2025</p>
-    <p>
-      El Senado rechazó los pliegos de los magistrados propuestos para las vacantes de la Corte Suprema.
-    </p>
-  </article>
+    <article id="fallo" class="fade-in">
+      <span class="label">Fallo</span>
+      <h2>📌 Noticia destacada de la semana</h2>
+      <p><strong>Fecha:</strong> 5 de abril de 2025</p>
+      <p>
+        El Senado rechazó los pliegos de los magistrados propuestos para las vacantes de la Corte Suprema.
+      </p>
+    </article>
 
-    <article class="fade-in" data-seccion="reforma">
+    <article id="reforma" class="fade-in">
       <span class="label">Reforma</span>
       <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
       <p><strong>Fecha:</strong> 3 de abril de 2025</p>
@@ -61,39 +38,15 @@
         Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.
       </p>
     </article>
-
-    <!-- Podés seguir agregando más artículos con su data-seccion correspondiente -->
   </main>
 
-    <footer>
-  <p>© 2025 La Gaceta Legal</p>
-  <div class="social-icons">
-    <a href="https://twitter.com/lagacetalegal" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com/lagacetalegal" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://linkedin.com/company/lagacetalegal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  </div>
-</footer>
-
+  <footer>
+    <p>© 2025 La Gaceta Legal</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/lagacetalegal" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
   </footer>
-
-  <script>
-    const botones = document.querySelectorAll('.burbuja');
-    const articulos = document.querySelectorAll('article');
-
-    botones.forEach(boton => {
-      boton.addEventListener('click', () => {
-        const seccion = boton.getAttribute('data-seccion');
-        
-        articulos.forEach(articulo => {
-          const categoria = articulo.getAttribute('data-seccion');
-          if (seccion === 'todas' || seccion === categoria) {
-            articulo.style.display = 'block';
-          } else {
-            articulo.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
