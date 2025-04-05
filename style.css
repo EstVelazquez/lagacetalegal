@@ -1,10 +1,11 @@
-/* Tipografías y base */
+/* Tipografías */
 body {
   font-family: 'Lora', serif;
   margin: 0;
   padding: 0;
   background: #f4f4f4;
   color: #333;
+  animation: fadeIn 0.6s ease-in;
 }
 
 /* Encabezado */
@@ -20,15 +21,16 @@ header h1 {
   margin: 0;
 }
 
+/* Subtítulo */
 .subtitulo {
   font-family: 'Open Sans', sans-serif;
+  font-style: italic;
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  font-style: italic;
   color: #ccc;
 }
 
-/* Secciones */
+/* Secciones estilo burbujas */
 .secciones {
   margin-top: 1rem;
   display: flex;
@@ -38,92 +40,14 @@ header h1 {
 }
 
 .secciones a {
-  background: #fff;
-  color: #0c2a4c;
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.secciones a:hover {
   background: #0c2a4c;
   color: #fff;
-  transform: scale(1.05);
-}
-
-/* Cuerpo principal */
-main {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Artículos */
-article {
-  background: white;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  animation: fadeIn 0.6s ease-in-out both;
-}
-
-/* Etiquetas */
-.label {
-  background: #0c2a4c;
-  color: white;
-  font-size: 0.75rem;
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  position: absolute;
-  top: -10px;
-  left: 15px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9em;
-  background: #ddd;
-  color: #333;
-  margin-top: 2rem;
-}
-
-.social-icons {
-  margin-top: 0.5rem;
-}
-
-.social-icons a {
-  margin: 0 0.5rem;
-  color: #0c2a4c;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #555;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-  color: #ffd700; /* dorado suave al pasar el mouse */
-}
+  font-family: 'Open Sans', sans-serif;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
