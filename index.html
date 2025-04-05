@@ -10,21 +10,19 @@
 <body>
   <header>
     <h1>La Gaceta Legal</h1>
-   <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
-
-<div class="secciones">
-  <span class="burbuja">Fallo</span>
-  <span class="burbuja">Reforma</span>
-  <span class="burbuja">Jurisprudencia</span>
-  <span class="burbuja">Congreso</span>
-  <span class="burbuja">Doctrina</span>
-</div>
-
-</div>
+    <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
+    <div class="secciones">
+      <button class="burbuja" data-seccion="todas">Todas</button>
+      <button class="burbuja" data-seccion="fallo">Fallo</button>
+      <button class="burbuja" data-seccion="reforma">Reforma</button>
+      <button class="burbuja" data-seccion="jurisprudencia">Jurisprudencia</button>
+      <button class="burbuja" data-seccion="congreso">Congreso</button>
+      <button class="burbuja" data-seccion="doctrina">Doctrina</button>
+    </div>
   </header>
 
   <main>
-    <article>
+    <article data-seccion="fallo">
       <span class="label">Fallo</span>
       <h2>📌 Noticia destacada de la semana</h2>
       <p><strong>Fecha:</strong> 5 de abril de 2025</p>
@@ -33,7 +31,7 @@
       </p>
     </article>
 
-    <article>
+    <article data-seccion="reforma">
       <span class="label">Reforma</span>
       <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
       <p><strong>Fecha:</strong> 3 de abril de 2025</p>
@@ -42,10 +40,32 @@
         Entre los temas se destacan la filiación, contratos electrónicos y responsabilidad parental.
       </p>
     </article>
+
+    <!-- Podés seguir agregando más artículos con su data-seccion correspondiente -->
   </main>
 
   <footer>
     <p>© 2025 La Gaceta Legal</p>
   </footer>
+
+  <script>
+    const botones = document.querySelectorAll('.burbuja');
+    const articulos = document.querySelectorAll('article');
+
+    botones.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const seccion = boton.getAttribute('data-seccion');
+        
+        articulos.forEach(articulo => {
+          const categoria = articulo.getAttribute('data-seccion');
+          if (seccion === 'todas' || seccion === categoria) {
+            articulo.style.display = 'block';
+          } else {
+            articulo.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
