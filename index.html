@@ -15,7 +15,20 @@
   referrerpolicy="no-referrer"
 />
 </head>
-<body>
+  <body>
+  <!-- HERO SECTION -->
+  <div id="hero">
+    <div class="hero-content">
+      <h1>La Gaceta Legal</h1>
+      <p>Noticias jurídicas, sin vueltas</p>
+      <button onclick="enterSite()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- CONTENIDO REAL DE LA PÁGINA -->
+  <div id="contenido" style="display: none;">
+    <!-- Aquí va tu header y el resto de la página -->
+
   <header>
     
     <h1>La Gaceta Legal</h1>
@@ -60,6 +73,15 @@
     <a href="https://linkedin.com/company/lagacetalegal" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
   </div>
 </footer>
-
+  </div> <!-- cierre de #contenido -->
+  <script>
+    function enterSite() {
+      document.getElementById('hero').classList.add('fade-out');
+      setTimeout(() => {
+        document.getElementById('hero').style.display = 'none';
+        document.getElementById('contenido').style.display = 'block';
+      }, 800); // dura lo mismo que la animación
+    }
+  </script>
 </body>
 </html>
