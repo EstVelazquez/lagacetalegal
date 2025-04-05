@@ -1,71 +1,195 @@
-body {
-  font-family: 'Open Sans', sans-serif;
+/* ----------------------
+   Reset y tipografía base
+------------------------- */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: #ffffff;
-  color: #333;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+  color: #333;
+  padding: 1rem;
+}
+
+/* Tipografía de títulos */
+h1, h2 {
+  font-family: 'Lora', serif;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ----------------------
+   Pantalla de bienvenida
+------------------------- */
 .pantalla-inicial {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
-  background: #e6e6e6;
-  transition: opacity 0.8s ease;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  text-align: center;
+  transition: opacity 1s ease-in-out;
 }
 
-.fade-out {
-  opacity: 0;
+.pantalla-inicial h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ----------------------
+   Encabezado
+------------------------- */
+header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.secciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.secciones a,
+.burbuja {
+  background-color: #1e2a38;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.secciones a:hover,
+.burbuja:hover {
+  background-color: #314559;
+}
+
+/* ----------------------
+   Separador ondulado
+------------------------- */
+.wave-separator {
+  margin-top: 1rem;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-separator svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* ----------------------
+   Contenido principal
+------------------------- */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+article {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-left: 4px solid #1e2a38;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+article .label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #555;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+/* ----------------------
+   Footer
+------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 0.875rem;
+  color: #777;
+}
+
+.social-icons {
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: #1e2a38;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+/* ----------------------
+   Transiciones
+------------------------- */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .oculto {
   display: none;
 }
 
-.fade-in {
-  animation: aparecer 1s ease forwards;
-}
+/* ----------------------
+   Responsive (pantallas grandes)
+------------------------- */
+@media screen and (min-width: 768px) {
+  body {
+    padding: 2rem;
+  }
 
-@keyframes aparecer {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  h1 {
+    font-size: 2.8rem;
+  }
 
-header, main, footer {
-  padding: 20px;
-}
+  .subtitulo {
+    font-size: 1.2rem;
+  }
 
-.secciones {
-  margin-top: 1rem;
-  display: flex;
-  gap: 15px;
-}
+  .secciones a, .burbuja {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 
-.secciones a {
-  text-decoration: none;
-  padding: 8px 16px;
-  background-color: #0066cc;
-  color: white;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-.wave-separator svg {
-  display: block;
-  width: 100%;
-  height: 100px;
-}
-
-footer {
-  text-align: center;
-  background-color: #f4f4f4;
-  padding: 20px 0;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  color: #333;
-  font-size: 20px;
+  article {
+    padding: 1.5rem;
+  }
 }
