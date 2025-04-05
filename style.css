@@ -202,3 +202,32 @@ footer {
     transform: translateY(0);
   }
 }
+/* Onda separadora */
+.wave-separator {
+  position: relative;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-separator svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+/* Animación suave para artículos */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
