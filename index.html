@@ -7,28 +7,30 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-... (acortado para vista) ..."
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-  <!-- Pantalla de bienvenida con transición -->
+  <!-- Pantalla de bienvenida -->
   <section id="intro" class="pantalla-inicial">
     <h1>La Gaceta Legal</h1>
     <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
   </section>
-<!-- Encabezado principal oculto al principio -->
+
+  <!-- Encabezado principal -->
   <header class="oculto">
     <h1>La Gaceta Legal</h1>
     <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
     <div class="secciones">
-      <span class="burbuja" data-seccion="fallo">Fallos</span>
-      <span class="burbuja" data-seccion="reforma">Reformas</span>
-      <span class="burbuja" data-seccion="jurisprudencia">Jurisprudencia</span>
+      <a href="#fallo">Fallo</a>
+      <a href="#reforma">Reforma</a>
+      <a href="#jurisprudencia">Jurisprudencia</a>
+      <a href="#opinion">Opinión</a>
     </div>
   </header>
 
@@ -41,45 +43,14 @@
 
   <!-- Contenido principal -->
   <main class="oculto fade-in">
-    <!-- artículos acá -->
-  </main>
-
-  <footer class="oculto">
-    <!-- redes + footer info -->
-  </footer>
-</body>
-  
-    <h1>La Gaceta Legal</h1>
-    <p class="subtitulo">Noticias jurídicas, sin vueltas</p>
-
-    
-<div class="secciones">
-  <a href="#fallo">Fallo</a>
-  <a href="#reforma">Reforma</a>
-  <a href="#jurisprudencia">Jurisprudencia</a>
-  <a href="#opinion">Opinión</a>
-  
-</div>
-
-    
-
-  </header>
-
-    <div class="wave-separator">
-  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-    <path d="M0,32L1440,100L1440,0L0,0Z" fill="#f4f4f4"></path>
-  </svg>
-</div>
-    
-  <main>
-    <article class="fade-in" id="fallo">
+    <article id="fallo">
       <span class="label">Fallo</span>
       <h2>📌 Noticia destacada de la semana</h2>
       <p><strong>Fecha:</strong> 5 de abril de 2025</p>
       <p>El Senado rechazó los pliegos de los magistrados propuestos para las vacantes de la Corte Suprema.</p>
     </article>
 
-    <article class="fade-in" id="reforma">
+    <article id="reforma">
       <span class="label">Reforma</span>
       <h2>🗞️ Reforma del Código Civil: ¿qué se viene?</h2>
       <p><strong>Fecha:</strong> 3 de abril de 2025</p>
@@ -88,24 +59,15 @@
     </article>
   </main>
 
-  <footer>
-  <footer>
-  <p>© 2025 La Gaceta Legal</p>
-  <div class="social-icons">
-    <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  </div>
-</footer>
-  </div> <!-- cierre de #contenido -->
+  <!-- Pie de página -->
+  <footer class="oculto">
+    <p>© 2025 La Gaceta Legal</p>
+    <div class="social-icons">
+      <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
   <script>
-    function enterSite() {
-      document.getElementById('hero').classList.add('fade-out');
-      setTimeout(() => {
-        document.getElementById('hero').style.display = 'none';
-        document.getElementById('contenido').style.display = 'block';
-      }, 800); // dura lo mismo que la animación
-    }
-  </script>
-</body>
-</html>
+    // Esperar
